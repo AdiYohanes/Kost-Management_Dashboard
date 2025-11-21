@@ -1,4 +1,3 @@
-import React from "react";
 import { Grid, Paper, Typography, Box, Stack, Avatar } from "@mui/material";
 // Import Ikon-ikon yang diperlukan
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
@@ -8,11 +7,13 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import MeetingRoomIcon from "@mui/icons-material/MeetingRoom";
 import StatCard from "./components/StatCard";
 import AddDataCard from "./components/AddDataCard";
-export const metadata = {
-  title: "Dashboard Profesional",
-  description: "Homepage for the admin dashboard",
-};
+import RevenueChart from "./components/RevenueChart";
+import { createDashboardMetadata } from "@/utils/metadata";
 
+export const metadata = createDashboardMetadata({
+  subtitle: "Analytics",
+  description: "Analytics Dashboard",
+});
 const statsData = [
   {
     id: 1,
@@ -90,6 +91,9 @@ export default function DashboardPage() {
           <AddDataCard />
         </Grid>
       </Grid>
+      <Box sx={{ p: 3 }}>
+        <RevenueChart />
+      </Box>
     </Box>
   );
 }
