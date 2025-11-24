@@ -338,8 +338,8 @@ export default function UnitKostPageContent() {
                   />
                 </TableCell>
                 <TableCell>
-                  <Typography 
-                    variant="body2" 
+                  <Typography
+                    variant="body2"
                     color={unit.bookingExpiration ? "text.primary" : "text.disabled"}
                   >
                     {unit.bookingExpiration || "-"}
