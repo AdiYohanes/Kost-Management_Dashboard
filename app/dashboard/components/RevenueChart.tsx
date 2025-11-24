@@ -119,6 +119,8 @@ export default function RevenueChart() {
         p: 3,
         borderRadius: 2,
         border: "1px solid #e5e7eb",
+        background: 'white',
+        boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
       }}
     >
       {/* Header */}
@@ -131,7 +133,7 @@ export default function RevenueChart() {
         mb={3}
       >
         <Box>
-          <Typography variant="h6" fontWeight={700}>
+          <Typography variant="h6" fontWeight={700} color="text.primary">
             Grafik Pendapatan
           </Typography>
           <Typography variant="body2" color="text.secondary">
@@ -145,7 +147,14 @@ export default function RevenueChart() {
             onClick={() => setPeriode("minggu")}
             variant={periode === "minggu" ? "contained" : "outlined"}
             size="small"
-            sx={{ textTransform: "none", fontWeight: 600 }}
+            sx={{
+              textTransform: "none",
+              fontWeight: 600,
+              bgcolor: periode === "minggu" ? 'primary.main' : 'transparent',
+              color: periode === "minggu" ? 'white' : 'text.primary',
+              border: periode === "minggu" ? 'none' : '1px solid',
+              borderColor: periode === "minggu" ? 'transparent' : 'divider'
+            }}
           >
             Mingguan
           </Button>
@@ -153,7 +162,14 @@ export default function RevenueChart() {
             onClick={() => setPeriode("bulan")}
             variant={periode === "bulan" ? "contained" : "outlined"}
             size="small"
-            sx={{ textTransform: "none", fontWeight: 600 }}
+            sx={{
+              textTransform: "none",
+              fontWeight: 600,
+              bgcolor: periode === "bulan" ? 'primary.main' : 'transparent',
+              color: periode === "bulan" ? 'white' : 'text.primary',
+              border: periode === "bulan" ? 'none' : '1px solid',
+              borderColor: periode === "bulan" ? 'transparent' : 'divider'
+            }}
           >
             Bulanan
           </Button>

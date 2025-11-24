@@ -15,11 +15,14 @@ import {
   ListItemText,
   ListSubheader,
 } from "@mui/material";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import PersonIcon from "@mui/icons-material/Person";
 import SettingsIcon from "@mui/icons-material/Settings";
 import HomeWorkIcon from "@mui/icons-material/HomeWork";
+import LocalLaundryServiceIcon from "@mui/icons-material/LocalLaundryService";
 
 import KostSelector from "./KostSelector";
 
@@ -27,21 +30,31 @@ const MENU_GROUPS = [
   {
     title: "MAIN",
     items: [
-      { text: "Dashboard", icon: <DashboardIcon /> },
-      { text: "Unit Kost", icon: <HomeWorkIcon /> },
+      { text: "Dashboard", icon: <DashboardIcon />, href: "/dashboard" },
+      {
+        text: "Unit Kost",
+        icon: <HomeWorkIcon />,
+        href: "/dashboard/unit-kost",
+      },
+      {
+        text: "Laundry",
+        icon: <LocalLaundryServiceIcon />,
+        href: "/dashboard/laundry",
+      },
     ],
   },
   {
     title: "SETTINGS",
     items: [
-      { text: "Users", icon: <PersonIcon /> },
-      { text: "Settings", icon: <SettingsIcon /> },
+      { text: "Users", icon: <PersonIcon />, href: "/dashboard/users" },
+      { text: "Settings", icon: <SettingsIcon />, href: "/dashboard/settings" },
     ],
   },
 ];
 
 export default function Sidebar({ drawerWidth }: { drawerWidth: number }) {
   const [selectedKost, setSelectedKost] = useState("kost1");
+  const pathname = usePathname();
 
   return (
     <Drawer
@@ -133,22 +146,47 @@ export default function Sidebar({ drawerWidth }: { drawerWidth: number }) {
               {group.title}
             </ListSubheader>
 
-            {group.items.map((item) => (
-              <ListItem key={item.text} disablePadding>
-                <ListItemButton sx={{ py: 1.5 }}>
-                  <ListItemIcon sx={{ minWidth: 40, color: "#616161" }}>
-                    {item.icon}
-                  </ListItemIcon>
-                  <ListItemText
-                    primary={item.text}
-                    primaryTypographyProps={{
-                      fontSize: "0.9rem",
-                      fontWeight: 500,
+            {group.items.map((item) => {
+              const isActive = pathname === item.href;
+
+              return (
+                <ListItem key={item.text} disablePadding>
+                  <ListItemButton
+                    component={Link}
+                    href={item.href}
+                    sx={{
+                      py: 1.5,
+                      bgcolor: isActive
+                        ? "rgba(0, 200, 83, 0.08)"
+                        : "transparent",
+                      borderRight: isActive ? "3px solid #00C853" : "none",
+                      "&:hover": {
+                        bgcolor: isActive
+                          ? "rgba(0, 200, 83, 0.12)"
+                          : "rgba(0, 0, 0, 0.04)",
+                      },
                     }}
-                  />
-                </ListItemButton>
-              </ListItem>
-            ))}
+                  >
+                    <ListItemIcon
+                      sx={{
+                        minWidth: 40,
+                        color: isActive ? "#00C853" : "#616161",
+                      }}
+                    >
+                      {item.icon}
+                    </ListItemIcon>
+                    <ListItemText
+                      primary={item.text}
+                      primaryTypographyProps={{
+                        fontSize: "0.9rem",
+                        fontWeight: isActive ? 600 : 500,
+                        color: isActive ? "#00C853" : "text.primary",
+                      }}
+                    />
+                  </ListItemButton>
+                </ListItem>
+              );
+            })}
           </Box>
         ))}
       </List>

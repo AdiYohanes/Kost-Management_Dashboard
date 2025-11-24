@@ -6,9 +6,9 @@ function AddDataCard() {
     <Paper
       elevation={0}
       sx={{
-        p: 3,
+        p: 2,
         height: "100%",
-        borderRadius: 5,
+        borderRadius: 2,
         border: "2px dashed",
         borderColor: "divider",
         bgcolor: "background.paper",
@@ -23,12 +23,12 @@ function AddDataCard() {
         },
       }}
     >
-      <Stack alignItems="center" spacing={1.2}>
+      <Stack alignItems="center" spacing={1}>
         <Box
           sx={{
-            width: 48,
-            height: 48,
-            borderRadius: 3,
+            width: 40,
+            height: 40,
+            borderRadius: 1.5,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -37,10 +37,10 @@ function AddDataCard() {
             transition: "0.2s",
           }}
         >
-          <AddIcon fontSize="medium" />
+          <AddIcon fontSize="small" />
         </Box>
 
-        <Typography variant="subtitle1" fontWeight={600} color="text.primary">
+        <Typography variant="body2" fontWeight={600} color="text.primary">
           Add Data
         </Typography>
       </Stack>

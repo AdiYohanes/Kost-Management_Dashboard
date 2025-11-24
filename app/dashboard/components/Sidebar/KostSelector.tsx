@@ -102,6 +102,13 @@ function KostSelector({
                 key={kost.value}
                 onClick={() => {
                   setSelectedKost(kost.value);
+                  // Menyimpan pilihan kost ke localStorage agar bisa dibaca oleh komponen lain
+                  localStorage.setItem("selectedKost", kost.value);
+                  // Trigger event storage agar komponen lain bisa merespons (tidak otomatis di halaman lain)
+                  window.dispatchEvent(new StorageEvent('storage', {
+                    key: 'selectedKost',
+                    newValue: kost.value
+                  }));
                   handleClose();
                 }}
                 sx={{ py: 1.2, gap: 1.5 }}
