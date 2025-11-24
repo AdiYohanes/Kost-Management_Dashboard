@@ -204,7 +204,7 @@ export default function UnitKostPageContent() {
   };
 
   // Fungsi untuk mendapatkan warna status pembayaran
-  const getPaymentStatusColor = (paymentStatus: "paid" | "pending" | "overdue") => {
+  const getPaymentStatusColor = (paymentStatus: string) => {
     switch (paymentStatus) {
       case "paid":
         return { bgcolor: "#e8f5e9", color: "#2e7d32" }; // hijau muda
@@ -265,7 +265,7 @@ export default function UnitKostPageContent() {
         sx={{ 
           bgcolor: "white", 
           borderRadius: 2, 
-          boxShadow: "0 2px 8px rgba(0,0,0,0.05)", 
+          boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
           overflow: "hidden"
         }}
       >
