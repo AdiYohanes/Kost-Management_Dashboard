@@ -62,8 +62,8 @@ const statsData = [
 // --- 3. HALAMAN UTAMA ---
 export default function DashboardPage() {
   return (
-    <Box sx={{ p: 3 }}>
-      <Box sx={{ mb: 4 }}>
+    <Box sx={{ p: 2 }}>
+      <Box sx={{ mb: 2 }}>
         <Typography variant="h4" fontWeight={700} gutterBottom>
           Selamat Datang, Admin!
         </Typography>
