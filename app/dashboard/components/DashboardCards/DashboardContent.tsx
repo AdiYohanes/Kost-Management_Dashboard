@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { Grid, Typography, Box } from "@mui/material";
 import StatCard from "../StatCard";
@@ -29,7 +29,7 @@ interface Transaction {
   description: string;
   amount: string;
   date: string;
-  status: 'paid' | 'pending' | 'overdue';
+  status: "paid" | "pending" | "overdue";
 }
 
 interface RentPayment {
@@ -58,7 +58,7 @@ export default function DashboardContent({
   statsData,
   occupancyData,
   transactionsData,
-  rentData
+  rentData,
 }: DashboardContentProps) {
   const handleAddResident = () => {
     console.log("Tambah Penghuni clicked");
@@ -100,7 +100,7 @@ export default function DashboardContent({
     description: string;
     amount: string;
     date: string;
-    status: 'paid' | 'pending' | 'overdue';
+    status: "paid" | "pending" | "overdue";
   }
 
   interface RentPayment {
