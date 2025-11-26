@@ -2,5 +2,5 @@ import { createDashboardMetadata } from "@/utils/metadata";
 
 export const metadata = createDashboardMetadata({
   subtitle: "Settings",
-  description: "Application settings",
+  description: "Pengaturan aplikasi sistem manajemen kost",
 });

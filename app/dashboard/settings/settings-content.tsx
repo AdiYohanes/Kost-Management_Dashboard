@@ -102,7 +102,7 @@ export default function SettingsPageContent() {
     { label: "Umum", icon: <SettingsIcon /> },
     { label: "Notifikasi", icon: <NotificationsIcon /> },
     { label: "Sistem", icon: <InfoIcon /> },
-    { label: "Tentang", icon: <InfoIcon /> },
+    { label: "Settings", icon: <InfoIcon /> },
   ];
 
   return (
@@ -110,7 +110,7 @@ export default function SettingsPageContent() {
       {/* Header Section */}
       <Box sx={{ mb: 3 }}>
         <Typography variant="h4" fontWeight={700} gutterBottom color="text.primary">
-          Pengaturan Sistem
+          Settings
         </Typography>
         <Typography variant="body1" color="text.secondary">
           Kelola konfigurasi dan preferensi aplikasi manajemen kost Anda
@@ -166,7 +166,7 @@ export default function SettingsPageContent() {
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
                 <SettingsIcon sx={{ mr: 1, color: '#1976d2' }} />
                 <Typography variant="h6" fontWeight={700}>
-                  Pengaturan Umum
+                  Pengaturan
                 </Typography>
               </Box>
               
@@ -357,7 +357,7 @@ export default function SettingsPageContent() {
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
                 <InfoIcon sx={{ mr: 1, color: '#7b1fa2' }} />
                 <Typography variant="h6" fontWeight={700}>
-                  Tentang Aplikasi
+                  Settings
                 </Typography>
               </Box>
               
@@ -404,7 +404,7 @@ export default function SettingsPageContent() {
             }}
           >
             <Typography variant="h6" fontWeight={700} mb={2}>
-              Pengaturan Cepat
+              Settings
             </Typography>
             
             <List>
