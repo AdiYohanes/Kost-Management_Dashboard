@@ -218,25 +218,137 @@ export default function UnitKostPageContent() {
   };
 
   return (
-    <Box sx={{ p: 1, maxWidth: "100vw", minHeight: "100vh" }}>
+    <Box sx={{ p: 3, maxWidth: "100vw", minHeight: "100vh", bgcolor: "#f8fafc" }}>
       {/* Header */}
-      <Box sx={{ mb: 1 }}>
-        <Typography variant="h5" fontWeight={700} gutterBottom>
+      <Box sx={{ mb: 3 }}>
+        <Typography variant="h4" fontWeight={700} gutterBottom color="text.primary">
           Unit Kost
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Kelola unit-unit kost Anda di sini
+        <Typography variant="body1" color="text.secondary">
+          Kelola dan pantau unit-unit kost Anda secara efisien
         </Typography>
       </Box>
 
+      {/* Summary Cards */}
+      <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: 'repeat(4, 1fr)' }, gap: 3, mb: 4 }}>
+        <Paper
+          sx={{
+            p: 3,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            textAlign: 'center',
+            bgcolor: 'white',
+            borderRadius: 3,
+            boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+            border: '1px solid #e2e8f0',
+            transition: 'transform 0.2s, box-shadow 0.2s',
+            '&:hover': {
+              transform: 'translateY(-4px)',
+              boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+            }
+          }}
+        >
+          <Typography variant="h5" color="#2e7d32" fontWeight={700}>
+            {dummyUnitKostData.filter(u => u.status === 'occupied').length}
+          </Typography>
+          <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+            Unit Terisi
+          </Typography>
+        </Paper>
+
+        <Paper
+          sx={{
+            p: 3,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            textAlign: 'center',
+            bgcolor: 'white',
+            borderRadius: 3,
+            boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+            border: '1px solid #e2e8f0',
+            transition: 'transform 0.2s, box-shadow 0.2s',
+            '&:hover': {
+              transform: 'translateY(-4px)',
+              boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+            }
+          }}
+        >
+          <Typography variant="h5" color="#c62828" fontWeight={700}>
+            {dummyUnitKostData.filter(u => u.status === 'empty').length}
+          </Typography>
+          <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+            Unit Kosong
+          </Typography>
+        </Paper>
+
+        <Paper
+          sx={{
+            p: 3,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            textAlign: 'center',
+            bgcolor: 'white',
+            borderRadius: 3,
+            boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+            border: '1px solid #e2e8f0',
+            transition: 'transform 0.2s, box-shadow 0.2s',
+            '&:hover': {
+              transform: 'translateY(-4px)',
+              boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+            }
+          }}
+        >
+          <Typography variant="h5" color="#ef6c00" fontWeight={700}>
+            {dummyUnitKostData.filter(u => u.status === 'booked').length}
+          </Typography>
+          <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+            Unit Dipesan
+          </Typography>
+        </Paper>
+
+        <Paper
+          sx={{
+            p: 3,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            textAlign: 'center',
+            bgcolor: 'white',
+            borderRadius: 3,
+            boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+            border: '1px solid #e2e8f0',
+            transition: 'transform 0.2s, box-shadow 0.2s',
+            '&:hover': {
+              transform: 'translateY(-4px)',
+              boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+            }
+          }}
+        >
+          <Typography variant="h5" color="#1565c0" fontWeight={700}>
+            {dummyUnitKostData.filter(u => u.status === 'maintenance').length}
+          </Typography>
+          <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+            Unit Perawatan
+          </Typography>
+        </Paper>
+      </Box>
+
       {/* Search Bar */}
-      <Paper 
-        sx={{ 
-          p: 1.5, 
-          mb: 2, 
-          bgcolor: "white", 
-          borderRadius: 2, 
-          boxShadow: "0 2px 8px rgba(0,0,0,0.05)" 
+      <Paper
+        sx={{
+          p: 2,
+          mb: 3,
+          bgcolor: "white",
+          borderRadius: 3,
+          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+          border: '1px solid #e2e8f0'
         }}
       >
         <TextField
@@ -255,67 +367,74 @@ export default function UnitKostPageContent() {
               </InputAdornment>
             ),
           }}
-          sx={{ bgcolor: "background.paper" }}
+          sx={{
+            bgcolor: "background.paper",
+            borderRadius: 2,
+            '& .MuiOutlinedInput-root': {
+              borderRadius: 2,
+            }
+          }}
         />
       </Paper>
 
       {/* Tabel Unit Kost */}
-      <TableContainer 
-        component={Paper} 
-        sx={{ 
-          bgcolor: "white", 
-          borderRadius: 2, 
-          boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
+      <TableContainer
+        component={Paper}
+        sx={{
+          bgcolor: "white",
+          borderRadius: 3,
+          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+          border: '1px solid #e2e8f0',
           overflow: "hidden"
         }}
       >
         <Table>
           <TableHead>
             <TableRow sx={{ bgcolor: "grey.50" }}>
-              <TableCell sx={{ fontWeight: 600, color: "text.primary" }}>Unit</TableCell>
-              <TableCell sx={{ fontWeight: 600, color: "text.primary" }}>Lantai</TableCell>
-              <TableCell sx={{ fontWeight: 600, color: "text.primary" }}>Tipe Kamar</TableCell>
-              <TableCell sx={{ fontWeight: 600, color: "text.primary" }}>Ukuran</TableCell>
-              <TableCell sx={{ fontWeight: 600, color: "text.primary" }}>Tarif/Bulan</TableCell>
-              <TableCell sx={{ fontWeight: 600, color: "text.primary" }}>Penghuni</TableCell>
-              <TableCell sx={{ fontWeight: 600, color: "text.primary" }}>Status</TableCell>
-              <TableCell sx={{ fontWeight: 600, color: "text.primary" }}>Kadaluarsa Booking</TableCell>
-              <TableCell sx={{ fontWeight: 600, color: "text.primary" }}>Status Pembayaran</TableCell>
+              <TableCell sx={{ fontWeight: 600, color: "text.primary", fontSize: '0.875rem' }}>Unit</TableCell>
+              <TableCell sx={{ fontWeight: 600, color: "text.primary", fontSize: '0.875rem' }}>Lantai</TableCell>
+              <TableCell sx={{ fontWeight: 600, color: "text.primary", fontSize: '0.875rem' }}>Tipe Kamar</TableCell>
+              <TableCell sx={{ fontWeight: 600, color: "text.primary", fontSize: '0.875rem' }}>Ukuran</TableCell>
+              <TableCell sx={{ fontWeight: 600, color: "text.primary", fontSize: '0.875rem' }}>Tarif/Bulan</TableCell>
+              <TableCell sx={{ fontWeight: 600, color: "text.primary", fontSize: '0.875rem' }}>Penghuni</TableCell>
+              <TableCell sx={{ fontWeight: 600, color: "text.primary", fontSize: '0.875rem' }}>Status</TableCell>
+              <TableCell sx={{ fontWeight: 600, color: "text.primary", fontSize: '0.875rem' }}>Kadaluarsa Booking</TableCell>
+              <TableCell sx={{ fontWeight: 600, color: "text.primary", fontSize: '0.875rem' }}>Status Pembayaran</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {paginatedUnits.map((unit) => (
-              <TableRow 
-                key={unit.id} 
+              <TableRow
+                key={unit.id}
                 hover
-                sx={{ 
+                sx={{
                   '&:last-child td, &:last-child th': { border: 0 },
-                  '&:hover': { bgcolor: 'action.hover' }
+                  '&:hover': { bgcolor: 'grey.50' }
                 }}
               >
                 <TableCell component="th" scope="row">
-                  <Typography variant="body2" fontWeight={600}>
+                  <Typography variant="body2" fontWeight={600} color="primary.main">
                     {unit.unitNumber}
                   </Typography>
                 </TableCell>
                 <TableCell>
-                  <Typography variant="body2">{unit.floor}</Typography>
+                  <Typography variant="body2" color="text.primary">{unit.floor}</Typography>
                 </TableCell>
                 <TableCell>
-                  <Typography variant="body2">{unit.roomType}</Typography>
+                  <Typography variant="body2" color="text.primary">{unit.roomType}</Typography>
                 </TableCell>
                 <TableCell>
-                  <Typography variant="body2">{unit.size}</Typography>
+                  <Typography variant="body2" color="text.primary">{unit.size}</Typography>
                 </TableCell>
                 <TableCell>
-                  <Typography variant="body2" color="primary.main" fontWeight={600}>
+                  <Typography variant="body2" color="success.main" fontWeight={600}>
                     {unit.monthlyRate}
                   </Typography>
                 </TableCell>
                 <TableCell>
-                  <Typography 
-                    variant="body2" 
-                    color={unit.tenantName ? "text.primary" : "text.disabled"}
+                  <Typography
+                    variant="body2"
+                    color={unit.tenantName ? "text.primary" : "text.secondary"}
                   >
                     {unit.tenantName || "Kosong"}
                   </Typography>
@@ -328,19 +447,20 @@ export default function UnitKostPageContent() {
                       unit.status === "booked" ? "Dipesan" : "Perawatan"
                     }
                     size="small"
-                    variant="outlined"
+                    variant="filled"
                     sx={{
                       ...getStatusColor(unit.status),
                       fontWeight: 600,
                       fontSize: "0.75rem",
-                      height: "24px"
+                      height: "24px",
+                      borderRadius: 1
                     }}
                   />
                 </TableCell>
                 <TableCell>
                   <Typography
                     variant="body2"
-                    color={unit.bookingExpiration ? "text.primary" : "text.disabled"}
+                    color={unit.bookingExpiration ? "text.primary" : "text.secondary"}
                   >
                     {unit.bookingExpiration || "-"}
                   </Typography>
@@ -353,12 +473,13 @@ export default function UnitKostPageContent() {
                       "Terlambat"
                     }
                     size="small"
-                    variant="outlined"
+                    variant="filled"
                     sx={{
                       ...getPaymentStatusColor(unit.monthlyPaymentStatus),
                       fontWeight: 600,
                       fontSize: "0.75rem",
-                      height: "24px"
+                      height: "24px",
+                      borderRadius: 1
                     }}
                   />
                 </TableCell>
@@ -368,89 +489,26 @@ export default function UnitKostPageContent() {
         </Table>
       </TableContainer>
 
-      {/* Pagination */}
-      {totalPages > 1 && (
-        <Stack direction="row" justifyContent="center" sx={{ mt: 2 }}>
+      {/* Pagination with total count */}
+      <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mt: 2 }}>
+        <Typography variant="body2" color="text.secondary">
+          Menampilkan {paginatedUnits.length} dari {filteredUnits.length} unit
+        </Typography>
+        {totalPages > 1 && (
           <Pagination
             count={totalPages}
             page={currentPage}
             onChange={(event, page) => setCurrentPage(page)}
             color="primary"
-            size="medium"
+            size="large"
+            sx={{
+              '& .MuiPaginationItem-root': {
+                borderRadius: 1
+              }
+            }}
           />
-        </Stack>
-      )}
-
-      {/* Info ringkasan */}
-      <Box sx={{ mt: 3, display: 'flex', gap: 2, flexWrap: 'wrap' }}>
-        <Paper 
-          sx={{ 
-            p: 2, 
-            flex: 1, 
-            bgcolor: '#e8f5e9', 
-            borderLeft: '4px solid #4caf50',
-            minWidth: '200px'
-          }}
-        >
-          <Typography variant="h6" color="#2e7d32" fontWeight={600}>
-            {dummyUnitKostData.filter(u => u.status === 'occupied').length}
-          </Typography>
-          <Typography variant="body2" color="#1b5e20">
-            Unit Terisi
-          </Typography>
-        </Paper>
-        
-        <Paper 
-          sx={{ 
-            p: 2, 
-            flex: 1, 
-            bgcolor: '#ffebee', 
-            borderLeft: '4px solid #f44336',
-            minWidth: '200px'
-          }}
-        >
-          <Typography variant="h6" color="#c62828" fontWeight={600}>
-            {dummyUnitKostData.filter(u => u.status === 'empty').length}
-          </Typography>
-          <Typography variant="body2" color="#b71c1c">
-            Unit Kosong
-          </Typography>
-        </Paper>
-        
-        <Paper 
-          sx={{ 
-            p: 2, 
-            flex: 1, 
-            bgcolor: '#fff3e0', 
-            borderLeft: '4px solid #ff9800',
-            minWidth: '200px'
-          }}
-        >
-          <Typography variant="h6" color="#ef6c00" fontWeight={600}>
-            {dummyUnitKostData.filter(u => u.status === 'booked').length}
-          </Typography>
-          <Typography variant="body2" color="#e65100">
-            Unit Dipesan
-          </Typography>
-        </Paper>
-        
-        <Paper 
-          sx={{ 
-            p: 2, 
-            flex: 1, 
-            bgcolor: '#e3f2fd', 
-            borderLeft: '4px solid #2196f3',
-            minWidth: '200px'
-          }}
-        >
-          <Typography variant="h6" color="#1565c0" fontWeight={600}>
-            {dummyUnitKostData.filter(u => u.status === 'maintenance').length}
-          </Typography>
-          <Typography variant="body2" color="#0d47a1">
-            Unit Perawatan
-          </Typography>
-        </Paper>
-      </Box>
+        )}
+      </Stack>
     </Box>
   );
 }
