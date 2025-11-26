@@ -23,5 +23,5 @@ Follow these steps to run the project locally:
 
 1. **Clone the repository**
    ```bash
-   git clone [https://github.com/your-username/kost-dashboard.git](https://github.com/your-username/kost-dashboard.git)
-   cd kost-dashboard
+   git clone https://github.com/AdiYohanes/dashboard-v1.git
+   cd dashboard-v1
