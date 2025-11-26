@@ -7,5 +7,5 @@ export const metadata = createDashboardMetadata({
 });
 
 export default function DashboardPage() {
-  return <DashboardClientWrapper selectedKost="kost1" />;
+  return <DashboardClientWrapper initialSelectedKost="kost1" />;
 }

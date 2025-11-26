@@ -55,8 +55,8 @@ export default function QuickActionsCard({
         sx={{ pb: 0.5, pt: 1 }}
       />
       <CardContent sx={{ flex: 1, pb: 1, pt: 0.5 }}>
-        <Grid container spacing={2}>
-          <Grid item xs={6}>
+        <Grid container spacing={2} sx={{ height: '100%' }}>
+          <Grid size={{ xs: 6 }}>
             <Button
               fullWidth
               variant="outlined"
@@ -67,7 +67,7 @@ export default function QuickActionsCard({
               <Typography variant="body2">Tambah Penghuni</Typography>
             </Button>
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={{ xs: 6 }}>
             <Button
               fullWidth
               variant="outlined"
@@ -78,7 +78,7 @@ export default function QuickActionsCard({
               <Typography variant="body2">Catat Pembayaran</Typography>
             </Button>
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={{ xs: 6 }}>
             <Button
               fullWidth
               variant="outlined"
@@ -89,7 +89,7 @@ export default function QuickActionsCard({
               <Typography variant="body2">Tambah Unit</Typography>
             </Button>
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={{ xs: 6 }}>
             <Button
               fullWidth
               variant="outlined"
