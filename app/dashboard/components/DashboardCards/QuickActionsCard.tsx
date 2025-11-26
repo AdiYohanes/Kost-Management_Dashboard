@@ -1,4 +1,12 @@
-import { Card, CardContent, CardHeader, Typography, Grid, Button, Box } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  Typography,
+  Grid,
+  Button,
+  Box,
+} from "@mui/material";
 import GroupAddIcon from "@mui/icons-material/GroupAdd";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import MeetingRoomIcon from "@mui/icons-material/MeetingRoom";
@@ -20,28 +28,28 @@ export default function QuickActionsCard({
   return (
     <Card
       sx={{
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        bgcolor: 'white',
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        bgcolor: "white",
         borderRadius: 2,
-        boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
-        border: '1px solid',
-        borderColor: 'divider'
+        boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
+        border: "1px solid",
+        borderColor: "divider",
       }}
     >
       <CardHeader
         avatar={
           <Box
             sx={{
-              bgcolor: 'primary.main',
-              color: 'white',
+              bgcolor: "primary.main",
+              color: "white",
               width: 32,
               height: 32,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              borderRadius: 1
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              borderRadius: 1,
             }}
           >
             <GroupAddIcon fontSize="small" />
@@ -55,7 +63,7 @@ export default function QuickActionsCard({
         sx={{ pb: 0.5, pt: 1 }}
       />
       <CardContent sx={{ flex: 1, pb: 1, pt: 0.5 }}>
-        <Grid container spacing={2} sx={{ height: '100%' }}>
+        <Grid container spacing={2} sx={{ height: "100%" }}>
           <Grid size={{ xs: 6 }}>
             <Button
               fullWidth
